@@ -45,8 +45,6 @@ public class UserDaoImpl implements UserDao {
     public List<User> listUsers() {
         try (Session session = sessionFactory.openSession()) {
             return session.createQuery("from User", User.class).getResultList();
-        } catch (Exception e) {
-            throw new DataProcessingException("Error retrieving all Users ", e);
         }
     }
 }
